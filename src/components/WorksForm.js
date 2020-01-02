@@ -1,30 +1,37 @@
 import React from 'react';
+import Work from './Work';
 
 const WorksForm = (props) => {
-    return (
-        <table className="table table-bordered mt-3">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Work Name</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                {
-                    props.works.map((item, index) => (
-                        <tr>
-                            <th scope="row">{index + 1}</th>
-                            <td>{item.name}</td>
-                            <td>{item.status}</td>
-                            <td></td>
-                        </tr>
-                    ))
-                }
-            </tbody>
-        </table>
-    );
+  return (
+    <table className="table table-bordered table-hover text-center" style={{ marginTop: 20 }}>
+      <thead>
+        <tr>
+          <th scope="col" className="text-center">#</th>
+          <th scope="col" className="text-center">Work Name</th>
+          <th scope="col" className="text-center">Status</th>
+          <th scope="col" className="text-center">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          // console.log(props.works)
+          !!props.works || props.works.length > 0
+            ?
+            props.works.map((item, index) => (
+              <Work 
+                work={item} 
+                index={index} 
+                editWork={ () => props.editWork(item) }
+                deleteWork={ () => props.deleteWork(item) }
+                changeWorkStatus={ (newStatus) => props.changeWorkStatus(item, newStatus) } 
+              />
+            ))
+            :
+            ''
+        }
+      </tbody>
+    </table>
+  );
 };
 
 export default WorksForm;
