@@ -3,7 +3,7 @@ import React from 'react';
 const Work = (props) => {
   const { work, index } = props
   return (
-    <tr>
+    <tr className='text-center'>
       <th scope="row" style={{ textAlign: 'center' }}>{index + 1}</th>
       <td>{work.name}</td>
       <td>
