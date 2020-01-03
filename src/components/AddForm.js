@@ -59,7 +59,7 @@ class AddForm extends Component {
         <div className="panel-heading">
           <h3 className="panel-title">
             {
-              this.state.id == '' ? 'Add New Work' : 'Edit Work'
+              this.state.id === '' ? 'Add New Work' : 'Edit Work'
             }
             <span className="fa fa-times-circle" style={{ float: 'right' }} onClick={ this.props.onCloseForm }></span>
           </h3>

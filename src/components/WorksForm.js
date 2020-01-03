@@ -21,18 +21,16 @@ const WorksForm = (props) => {
         <tr>
           <td></td>
           <td>
-            {/* <input type='text' className='form-control' name='filterName' value={filterName} onChange={ handleChangeName } /> */}
-            <input type='text' className='form-control' name='filterName' value={filterName} onChange={ e => { 
+            <input type='text' className='form-control' name='filterName' value={filterName} onChange={e => {
               changeFilterName(e.target.value)
               props.filter(e.target.value, filterStatus)
-             } } />
+            }} />
           </td>
           <td>
-            {/* <select className='form-control' name='filterStatus' value={filterStatus} onChange={ handleChangeStatus }> */}
-            <select className='form-control' name='filterStatus' value={filterStatus} onChange={ e => {
+            <select className='form-control' name='filterStatus' value={filterStatus} onChange={e => {
               changeFilterStatus(e.target.value)
               props.filter(filterName, e.target.value)
-            } }>
+            }}>
               <option value='All'>All</option>
               <option value='Pending'>Pending</option>
               <option value='Doing'>Doing</option>

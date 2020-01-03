@@ -9,7 +9,12 @@ class App extends Component {
     this.state = {
       works: [],
       isShowForm: false,
-      editingWork: null
+      editingWork: null,
+      keyword: '',
+      sort: {
+        by: '',
+        value: 1
+      }
     }
   }
 
@@ -40,7 +45,7 @@ class App extends Component {
     console.log(work);
     if(work.id !== ''){
       works.forEach(item => {
-        if(item.id == work.id){
+        if(item.id === work.id){
           item.id=work.id
           item.name=work.name
           item.status = work.status
@@ -96,14 +101,13 @@ class App extends Component {
   }
 
   onFilter = (name, status) => {
-    const works = JSON.parse(localStorage.getItem('works'))
-    const res = works.filter(item => item.name.toLowerCase().includes(name.toLowerCase()) && (status == 'All' ? !'' : (item.status == status)))
-    console.log(res);
     this.setState({
-      works: res
+      filter: {
+        filterName: name,
+        filterStatus: status
+      }
     })
   }
-
   
   componentWillMount() {
     if(localStorage && localStorage.getItem('works')){
@@ -116,7 +120,30 @@ class App extends Component {
   
 
   render() {
-    const { isShowForm, works, editingWork } = this.state
+    let { isShowForm, works, editingWork, filter, keyword, sort } = this.state
+    console.log(sort);
+    if(filter) {
+      if(filter.filterName){
+        works = works.filter(item => item.name.toLowerCase().indexOf(filter.filterName.toLowerCase()) !== -1)
+      }
+      if(filter.filterStatus) {
+        works = works.filter(item => filter.filterStatus === 'All' ? item : item.status === filter.filterStatus)
+      }
+    }   
+    if(keyword){
+      works = works.filter(item => item.name.toLowerCase().indexOf(keyword.toLowerCase()) !== -1)
+    }
+    if(sort.by !== '') {
+      if(sort.by === 'name'){
+        works.sort((a,b) => {
+          if(a.name > b.name) return sort.value
+          else if(a.name<b.name) return -sort.value
+          else return 0
+        })
+      }else{
+        works = works.filter(item => item.status === sort.value)
+      }
+    }
     return (
       <div className="container">
         <hr />
@@ -146,7 +173,10 @@ class App extends Component {
               <i className="far fa-plus-square"></i> &nbsp; Add New Task
             </button>
             <div className="row" style={{ marginLeft: 0 }}>
-              <Control />
+              <Control 
+                searchByKeyword={ (keyword) => this.setState({ keyword })} 
+                onSort={ (objSort) => this.setState({ sort: objSort }) }
+              />
             </div>
             <div className="row" style={{ marginTop: 15 }}>
               <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
