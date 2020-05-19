@@ -1,0 +1,1 @@
+export const back_end_url = 'http://18.234.208.228:8080/api'

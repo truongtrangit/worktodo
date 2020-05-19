@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import AddForm from './components/AddForm';
 import WorksForm from './components/WorksForm';
 import Control from './components/Control'
+import {back_end_url} from './constant/constant'
+import axios from 'axios'
 
 class App extends Component {
   constructor(props) {
@@ -111,10 +113,14 @@ class App extends Component {
   
   componentWillMount() {
     if(localStorage && localStorage.getItem('works')){
-      const works = localStorage.getItem('works')
-      this.setState({
-        works: JSON.parse(works)
+      // const works = localStorage.getItem('works')
+      axios.get(`${back_end_url}/works`)
+      .then(result => {
+        console.log(result);
       })
+      // this.setState({
+      //   works: JSON.parse(works)
+      // })
     }
   }
   
