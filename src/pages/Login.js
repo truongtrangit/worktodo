@@ -31,7 +31,7 @@ const Login = () => {
             <span className="login100-form-title p-b-26">Welcome</span>
             <span className="login100-form-title p-b-48">
               {/* <i className="zmdi zmdi-font"></i> */}
-              <img src='./images/logo.png' style={{ width: '30%', marginBottom: '-5%' }} />
+              <img alt="" src='./images/logo.png' style={{ width: '30%', marginBottom: '-5%' }} />
             </span>
 
             <div

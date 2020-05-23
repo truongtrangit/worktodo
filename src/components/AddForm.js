@@ -47,7 +47,6 @@ class AddForm extends Component {
   };
 
   componentWillMount() {
-    console.log(this.props.valueEditting);
     if (this.props.valueEditting) {
       this.setState({
         _id: this.props.valueEditting._id,

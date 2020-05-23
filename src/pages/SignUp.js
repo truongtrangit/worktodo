@@ -31,6 +31,7 @@ const SignUp = (props) => {
             <span className="login100-form-title p-b-26">Welcome</span>
             <span className="login100-form-title p-b-48">
               <img
+                alt=""
                 src="./images/logo.png"
                 style={{ width: "30%", marginBottom: "-5%" }}
               />
