@@ -8,15 +8,15 @@ const Sort = (props) => {
             </button>
             <ul className="dropdown-menu">
                 <li onClick={ () => props.onSort({ by: 'name', value: 1 }) }>
-                    <a role='button'>
+                    <a role='button' href>
                         <i className="fas fa-sort-alpha-down"></i> Name A-Z
                     </a>
                 </li>
-                <li onClick={ () => props.onSort({ by: 'name', value: -1 }) }><a role='button'><i className="fas fa-sort-alpha-down-alt"></i> Name A-Z</a></li>
+                <li onClick={ () => props.onSort({ by: 'name', value: -1 }) }><a role='button' href><i className="fas fa-sort-alpha-down-alt"></i> Name A-Z</a></li>
                 <li role='separator' className='divider'></li>
-                <li onClick={ () => props.onSort({ by: 'status', value: 'Pending' }) }><a role='button'>Pending Status</a></li>
-                <li onClick={ () => props.onSort({ by: 'status', value: 'Doing' }) }><a role='button'>Doing Status</a></li>
-                <li onClick={ () => props.onSort({ by: 'status', value: 'Done' }) }><a role='button'>Done Status</a></li>
+                <li onClick={ () => props.onSort({ by: 'status', value: 'Pending' }) }><a role='button' href>Pending Status</a></li>
+                <li onClick={ () => props.onSort({ by: 'status', value: 'Doing' }) }><a role='button' href>Doing Status</a></li>
+                <li onClick={ () => props.onSort({ by: 'status', value: 'Done' }) }><a role='button' href>Done Status</a></li>
             </ul>
         </div>
     );

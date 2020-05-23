@@ -79,7 +79,7 @@ const UserInfo = (props) => {
             <div className="modal-footer">
               <button
                 type="button"
-                className="btn btn-secondary"
+                className="btn btn-default"
                 data-dismiss="modal"
                 onClick={() => setToggleModal(false)}
               >
@@ -127,7 +127,7 @@ const UserInfo = (props) => {
           </button>
           <ul className="dropdown-menu">
             <li>
-              <a onClick={() => setToggleModal(true)}>Update Password</a>
+              <a onClick={() => setToggleModal(true)} style={{ cursor: "pointer" }} href>Update Password</a>
             </li>
             <li>
               <a
@@ -135,6 +135,8 @@ const UserInfo = (props) => {
                   logout();
                   props.resetLogin();
                 }}
+                style={{ cursor: "pointer" }}
+                href
               >
                 Logout
               </a>

@@ -2,6 +2,8 @@ import React, {useState} from "react";
 import axios from 'axios'
 import { login } from '../utils/index'
 import {backend_url, frontend_url} from '../constant/constant'
+import { Link } from 'react-router-dom'
+
 
 const Login = () => {
   const [email, setEmail] = useState('')
@@ -22,46 +24,47 @@ const Login = () => {
     })
   }
   return (
-    <div class="limiter">
-      <div class="container-login100">
-        <div class="wrap-login100">
-          <form class="login100-form validate-form">
-            <span class="login100-form-title p-b-26">Welcome</span>
-            <span class="login100-form-title p-b-48">
-              <i class="zmdi zmdi-font"></i>
+    <div className="limiter">
+      <div className="container-login100">
+        <div className="wrap-login100">
+          <form className="login100-form validate-form">
+            <span className="login100-form-title p-b-26">Welcome</span>
+            <span className="login100-form-title p-b-48">
+              {/* <i className="zmdi zmdi-font"></i> */}
+              <img src='./images/logo.png' style={{ width: '30%', marginBottom: '-5%' }} />
             </span>
 
             <div
-              class="wrap-input100 validate-input"
+              className="wrap-input100 validate-input"
               data-validate="Valid email is: a@b.c"
             >
-              <input class="input100" type="text" name="email" onChange={(e) => setEmail(e.target.value)}/>
-              <span class="focus-input100" data-placeholder="Email"></span>
+              <input className="input100" type="text" name="email" onChange={(e) => setEmail(e.target.value)}/>
+              <span className="focus-input100" data-placeholder="Email"></span>
             </div>
 
             <div
-              class="wrap-input100 validate-input"
+              className="wrap-input100 validate-input"
               data-validate="Enter password"
             >
-              <span class="btn-show-pass">
-                <i class="zmdi zmdi-eye"></i>
+              <span className="btn-show-pass">
+                <i className="zmdi zmdi-eye"></i>
               </span>
-              <input class="input100" type="password" name="pass" onChange={(e) => setPassword(e.target.value)}/>
-              <span class="focus-input100" data-placeholder="Password"></span>
+              <input className="input100" type="password" name="pass" onChange={(e) => setPassword(e.target.value)}/>
+              <span className="focus-input100" data-placeholder="Password"></span>
             </div>
 
-            <div class="container-login100-form-btn">
-              <div class="wrap-login100-form-btn">
-                <div class="login100-form-bgbtn"></div>
-                <button class="login100-form-btn" onClick={handleLogin}>Login</button>
+            <div className="container-login100-form-btn">
+              <div className="wrap-login100-form-btn">
+                <div className="login100-form-bgbtn"></div>
+                <button className="login100-form-btn" onClick={handleLogin}>Login</button>
               </div>
             </div>
 
-            <div class="text-center p-t-115">
-              <span class="txt1">Don’t have an account? </span>
-              <a class="txt2" href={frontend_url+`/sign-up`}>
+            <div className="text-center p-t-115">
+              <span className="txt1">Don’t have an account? </span>
+              <Link className="txt2" to="/sign-up">
                 Sign Up
-              </a>
+              </Link>
             </div>
           </form>
         </div>

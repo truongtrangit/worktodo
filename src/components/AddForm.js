@@ -25,7 +25,7 @@ class AddForm extends Component {
       alert("You must fill work's name");
       e.preventDefault();
     } else {
-      if (this.state._id != "") {
+      if (this.state._id !== "") {
         e.preventDefault();
         const _id = this.state._id
         this.props.editWork({ _id, name, status });

@@ -14,12 +14,12 @@ const Control = (props) => {
         <Sort onSort={(objSort) => props.onSort(objSort)} />
       </div>
       <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-        <button type="button" class="btn btn-danger" onClick={props.deleteCompleted}>
+        <button type="button" className="btn btn-danger" onClick={props.deleteCompleted}>
           DeleteCompleted
         </button>
       </div>
       <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-        <button type="button" class="btn btn-danger" onClick={props.deleteAll}>
+        <button type="button" className="btn btn-danger" onClick={props.deleteAll}>
           Delete All
         </button>
       </div>

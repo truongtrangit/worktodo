@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { backend_url, frontend_url } from "../constant/constant";
+import { Link } from "react-router-dom";
 
 const SignUp = (props) => {
   const [email, setEmail] = useState("");
@@ -29,7 +30,10 @@ const SignUp = (props) => {
           <form className="login100-form validate-form">
             <span className="login100-form-title p-b-26">Welcome</span>
             <span className="login100-form-title p-b-48">
-              <i className="zmdi zmdi-font"></i>
+              <img
+                src="./images/logo.png"
+                style={{ width: "30%", marginBottom: "-5%" }}
+              />
             </span>
 
             <div
@@ -92,12 +96,12 @@ const SignUp = (props) => {
               </div>
             </div>
 
-            <div className="text-center p-t-115">
+            <div className="text-center p-t-75">
               <span className="txt1">Already have an account? </span>
 
-              <a className="txt2" href={frontend_url + `/login`}>
+              <Link className="txt2" to="/login">
                 Login
-              </a>
+              </Link>
             </div>
           </form>
         </div>

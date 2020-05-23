@@ -154,7 +154,7 @@ class WorksManage extends Component {
 
   componentWillMount() {
     if (localStorage) {
-      // const works = localStorage.getItem('works')
+      // const works = localStorage.getItem('works')      
       axios
         .get(`${backend_url}/works`, {
           headers: { Authorization: `Bearer ${getToken()}` },

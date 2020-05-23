@@ -9,6 +9,7 @@ import {
 import WorksManage from "./pages/WorksManage";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
+import _404 from './pages/_404'
 import { isLogin } from "./utils/index";
 
 const PrivateRoute = ({ component, isLogin, ...rest }) => {
@@ -58,9 +59,10 @@ class App extends Component {
           {/* {
             privatesRoute.map(item => <PrivateRoute component={item.component} path={item.path} exact={item.exact} isLogin={item.isLogin} />)
           } */}
-          <Route path="/login">{isLogin() ? <WorksManage /> : <Login />}</Route>
+          {/* <Route path="/login">{isLogin() ? <WorksManage path="/" exact /> : <Login />}</Route> */}
+          <Route path="/login">{isLogin() ? <Redirect to={"/"} /> : <Login />}</Route>
           <Route path="/sign-up">
-            {isLogin() ? <WorksManage /> : <SignUp />}
+            {isLogin() ? <Redirect to={"/"} />  : <SignUp />}
           </Route>
           <PrivateRoute
             component={WorksManage}
@@ -68,6 +70,7 @@ class App extends Component {
             exact
             isLogin={isLogin()}
           />
+          <Route component={_404}></Route>
         </Switch>
       </Router>
     );
