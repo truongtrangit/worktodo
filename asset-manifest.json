@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/worktodo/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/worktodo/static/js/main.4c8f5944.chunk.js",
+    "main.js.map": "/worktodo/static/js/main.4c8f5944.chunk.js.map",
+    "runtime-main.js": "/worktodo/static/js/runtime-main.50a82e2b.js",
+    "runtime-main.js.map": "/worktodo/static/js/runtime-main.50a82e2b.js.map",
+    "static/js/2.96934f21.chunk.js": "/worktodo/static/js/2.96934f21.chunk.js",
+    "static/js/2.96934f21.chunk.js.map": "/worktodo/static/js/2.96934f21.chunk.js.map",
+    "index.html": "/worktodo/index.html",
+    "precache-manifest.f1d2374cc10ff0518411db06e24acd7f.js": "/worktodo/precache-manifest.f1d2374cc10ff0518411db06e24acd7f.js",
+    "service-worker.js": "/worktodo/service-worker.js",
+    "static/css/main.5ecd60fb.chunk.css.map": "/worktodo/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.96934f21.chunk.js.LICENSE": "/worktodo/static/js/2.96934f21.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.50a82e2b.js",
+    "static/js/2.96934f21.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.4c8f5944.chunk.js"
+  ]
+}
